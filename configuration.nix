@@ -76,6 +76,7 @@
 
     nvidia = {
       modesetting.enable = true;
+      powerManagement.enable = true;
       nvidiaSettings = true;
 
       # Open Source Kernel Modules
@@ -83,10 +84,6 @@
 
       # Beta Drivers
       package = config.boot.kernelPackages.nvidiaPackages.beta;
-
-      powerManagement = {
-        enable = true;
-      };
 
       prime = {
         offload = {
@@ -102,17 +99,6 @@
     bluetooth.enable = true; # enables support for Bluetooth
     bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
   };
-
-  # ZRam
-  zramSwap.enable = true;
-
-  # Swap File
-  swapDevices = [
-    {
-      device = "/var/lib/swapfile";
-      size = 8 * 1024;
-    }
-  ];
 
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
@@ -132,6 +118,17 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
+
+  # ZRam
+  zramSwap.enable = true;
+
+  # Swap File
+  swapDevices = [
+    {
+      device = "/var/lib/swapfile";
+      size = 8 * 1024;
+    }
+  ];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -176,6 +173,13 @@
     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     #  wget
   ];
+
+  # Garbage collection settings
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 21d";
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
