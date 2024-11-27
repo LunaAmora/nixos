@@ -43,19 +43,6 @@ in
       "networkmanager"
       "wheel"
     ];
-    packages = with pkgs; [
-      vesktop
-      vscode
-      prismlauncher
-      vlc
-      qbittorrent
-      direnv
-      nix-direnv
-      heroic
-      rustup
-      gcc
-      nil
-    ];
   };
 
   services.flatpak = {
@@ -71,8 +58,6 @@ in
     '';
   };
 
-  programs.firefox.enable = true;
-
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
@@ -80,13 +65,9 @@ in
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
   };
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
+  # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
     git
-    nixfmt-rfc-style
-    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    #  wget
   ];
 
   # Enable sound with pipewire.
@@ -122,13 +103,6 @@ in
       dates = "weekly";
       options = "--delete-older-than 21d";
     };
-  };
-
-  environment.variables = {
-    HISTCONTROL = [
-      "ignoreboth"
-      "erasedups"
-    ];
   };
 
   # Some programs need SUID wrappers, can be configured further or are
