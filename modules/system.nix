@@ -55,8 +55,12 @@ in
       rustup
       gcc
       nil
-      flatpak
     ];
+  };
+
+  services.flatpak = {
+    enable = true;
+    packages = [ "com.valvesoftware.SteamLink" ];
   };
 
   systemd.services.flatpak-repo = {
