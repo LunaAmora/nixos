@@ -1,9 +1,5 @@
-{ pkgs, ... }:
+{ pkgs, username, ... }:
 
-let
-  username = "luna";
-
-in
 {
   # Bootloader.
   boot.loader.systemd-boot.enable = true;

@@ -1,9 +1,9 @@
-{ pkgs, ... }:
+{ pkgs, username, ... }:
 
 {
   home = {
-    username = "luna";
-    homeDirectory = "/home/luna";
+    inherit username;
+    homeDirectory = "/home/${username}";
 
     stateVersion = "24.05";
 
@@ -25,7 +25,7 @@
   };
 
   programs.bash.historyControl = [
-    "ignoredups"
-    "ignorespace"
+    "ignoreboth"
+    "erasedups"
   ];
 }

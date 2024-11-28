@@ -14,21 +14,28 @@
       home-manager,
       nix-flatpak,
       ...
-    }@inputs:
+    }:
+    let
+      username = "luna";
+      hostname = "dell-g15";
+    in
     {
-      nixosConfigurations.dell-g15 = nixpkgs.lib.nixosSystem {
+      nixosConfigurations."${hostname}" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./hosts/dell-g15
+          ./hosts/${hostname}
           nix-flatpak.nixosModules.nix-flatpak
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = inputs;
-            home-manager.users.luna = import ./home;
+            home-manager.extraSpecialArgs.username = username;
+            home-manager.users."${username}" = import ./home;
           }
         ];
+        specialArgs = {
+          inherit username hostname;
+        };
       };
 
       formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-rfc-style;

@@ -1,14 +1,19 @@
-{ config, ... }:
+{
+  pkgs,
+  config,
+  username,
+  hostname,
+  ...
+}:
 
 {
   imports = [
     ./hardware-configuration.nix
-    ../../modules/system.nix
-    # The Window Manager
+    (import ../../modules/system.nix { inherit pkgs username; })
     ../../modules/wm/kde.nix
   ];
 
-  networking.hostName = "dell-g15";
+  networking.hostName = hostname;
 
   # Configure console keymap
   console.keyMap = "br-abnt2";
