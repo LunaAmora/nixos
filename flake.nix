@@ -20,7 +20,7 @@
       hostname = "dell-g15";
     in
     {
-      nixosConfigurations."${hostname}" = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./hosts/${hostname}
@@ -30,7 +30,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.extraSpecialArgs.username = username;
-            home-manager.users."${username}" = import ./home;
+            home-manager.users.${username} = import ./home;
           }
         ];
         specialArgs = {
