@@ -19,9 +19,9 @@
       nix-direnv
       heroic
       rustup
-      gcc
       nil
       mold
+      clang
     ];
 
     file.".cargo/config.toml".text = ''
