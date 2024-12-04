@@ -1,6 +1,11 @@
 { pkgs, username, ... }:
 
 {
+  imports = [
+    ./vscode.nix
+    ./git.nix
+  ];
+
   home = {
     inherit username;
     homeDirectory = "/home/${username}";
@@ -11,7 +16,6 @@
       home-manager
       firefox
       vesktop
-      vscode
       prismlauncher
       vlc
       qbittorrent
@@ -29,13 +33,6 @@
       linker = "clang"
       rustflags = ["-C", "link-arg=-fuse-ld=${pkgs.mold}/bin/mold"]
     '';
-  };
-
-  programs.git = {
-    enable = true;
-    userName = "LunaAmora";
-    userEmail = "luna.mberry@gmail.com";
-    extraConfig.merge.conflictStyle = "diff3";
   };
 
   programs.bash.historyControl = [
