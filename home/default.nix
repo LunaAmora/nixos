@@ -31,6 +31,13 @@
     '';
   };
 
+  programs.git = {
+    enable = true;
+    userName = "LunaAmora";
+    userEmail = "luna.mberry@gmail.com";
+    extraConfig.merge.conflictStyle = "diff3";
+  };
+
   programs.bash.historyControl = [
     "ignoreboth"
     "erasedups"
