@@ -34,12 +34,13 @@
     graphics.enable = true;
 
     nvidia = {
+      nvidiaSettings = true;
       modesetting.enable = true;
       powerManagement.enable = true;
-      nvidiaSettings = true;
+      powerManagement.finegrained = true;
 
       # Open Source Kernel Modules
-      open = true;
+      open = false;
 
       # Beta Drivers
       package = config.boot.kernelPackages.nvidiaPackages.beta;
