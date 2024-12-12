@@ -15,6 +15,7 @@ in
     displayManager.sddm = {
       enable = true;
       theme = "breeze";
+      wayland.enable = true;
     };
     desktopManager.plasma6.enable = true;
   };
