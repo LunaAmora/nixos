@@ -33,10 +33,17 @@
     '';
   };
 
-  programs.bash.historyControl = [
-    "ignoreboth"
-    "erasedups"
-  ];
+  programs.bash = {
+    enable = true;
+    bashrcExtra = ''
+      eval "$(direnv hook bash)"
+      export DIRENV_LOG_FORMAT=
+    '';
+    historyControl = [
+      "ignoreboth"
+      "erasedups"
+    ];
+  };
 
   programs.direnv = {
     enable = true;
