@@ -19,8 +19,6 @@
       prismlauncher
       vlc
       qbittorrent
-      direnv
-      nix-direnv
       heroic
       rustup
       nil
@@ -39,4 +37,10 @@
     "ignoreboth"
     "erasedups"
   ];
+
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+    enableBashIntegration = true;
+  };
 }
