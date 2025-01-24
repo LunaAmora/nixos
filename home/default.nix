@@ -19,7 +19,7 @@
       prismlauncher
       vlc
       qbittorrent
-      heroic
+      # heroic
       rustup
       nil
       mold
