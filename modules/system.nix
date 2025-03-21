@@ -38,22 +38,11 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "gamemode"
     ];
   };
 
-  services.flatpak = {
-    enable = true;
-    packages = [ "com.valvesoftware.SteamLink" ];
-  };
-
-  systemd.services.flatpak-repo = {
-    wantedBy = [ "multi-user.target" ];
-    path = [ pkgs.flatpak ];
-    script = ''
-      flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-    '';
-  };
-
+  programs.gamemode.enable = true;
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play

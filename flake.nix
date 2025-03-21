@@ -6,15 +6,12 @@
 
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-
-    nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 
   outputs =
     {
       nixpkgs,
       home-manager,
-      nix-flatpak,
       ...
     }:
     let
@@ -35,8 +32,6 @@
             home-manager.extraSpecialArgs.username = username;
             home-manager.users.${username} = import ./home;
           }
-
-          nix-flatpak.nixosModules.nix-flatpak
         ];
         specialArgs = {
           inherit username hostname;

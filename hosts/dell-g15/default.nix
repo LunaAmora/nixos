@@ -40,7 +40,7 @@
       powerManagement.finegrained = false;
 
       # Open Source Kernel Modules
-      open = false;
+      open = true;
 
       # Beta Drivers
       package = config.boot.kernelPackages.nvidiaPackages.beta;
