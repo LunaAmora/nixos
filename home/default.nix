@@ -24,4 +24,12 @@
       etterna
     ];
   };
+
+  programs.bash = {
+    enable = true;
+    historyControl = [
+      "ignoreboth"
+      "erasedups"
+    ];
+  };
 }
