@@ -40,6 +40,19 @@
             };
           };
         };
+
+        "gitlens.views.scm.grouped.views" = {
+          "commits" = true;
+          "branches" = true;
+          "remotes" = true;
+          "stashes" = false;
+          "tags" = true;
+          "worktrees" = true;
+          "contributors" = true;
+          "repositories" = false;
+          "searchAndCompare" = false;
+          "launchpad" = false;
+        };
       };
     };
   };
