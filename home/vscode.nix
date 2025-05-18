@@ -9,6 +9,11 @@
 
         # nix
         jnoortheen.nix-ide
+
+        # rust
+        fill-labs.dependi
+        rust-lang.rust-analyzer
+        tamasfe.even-better-toml
       ];
 
       userSettings = {
@@ -53,6 +58,9 @@
           "searchAndCompare" = false;
           "launchpad" = false;
         };
+
+        "rust-analyzer.lens.enable" = false;
+        "rust-analyzer.check.command" = "clippy";
       };
     };
   };

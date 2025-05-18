@@ -15,14 +15,25 @@
     packages = with pkgs; [
       home-manager
       firefox
-      vesktop
+      discord
       vlc
       qbittorrent
-      # heroic
       nil
       kdePackages.filelight
       etterna
+      nh
+      mold
+      clang
+      rustup
     ];
+
+    sessionVariables.NH_FLAKE = "/etc/nixos";
+
+    file.".cargo/config.toml".text = ''
+      [target.x86_64-unknown-linux-gnu]
+      linker = "clang"
+      rustflags = ["-C", "link-arg=-fuse-ld=${pkgs.mold}/bin/mold"]
+    '';
   };
 
   programs.bash = {

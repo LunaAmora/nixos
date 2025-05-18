@@ -7,6 +7,8 @@
 
   boot.kernel.sysctl."kernel.sysrq" = 502;
 
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
   # Enable networking
   networking.networkmanager.enable = true;
 
