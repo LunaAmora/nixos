@@ -5,15 +5,7 @@
     enable = true;
     profiles.default = {
       extensions = with pkgs.vscode-extensions; [
-        eamodio.gitlens
-
-        # nix
         jnoortheen.nix-ide
-
-        # rust
-        fill-labs.dependi
-        rust-lang.rust-analyzer
-        tamasfe.even-better-toml
       ];
 
       userSettings = {
@@ -27,10 +19,7 @@
 
         "security.workspace.trust.untrustedFiles" = "open";
         "update.showReleaseNotes" = false;
-
-        "git.autofetch" = true;
-        "git.confirmSync" = false;
-        "git.enableSmartCommit" = true;
+        "update.mode" = "none";
 
         "nix.enableLanguageServer" = true;
         "nix.serverSettings" = {
@@ -45,22 +34,6 @@
             };
           };
         };
-
-        "gitlens.views.scm.grouped.views" = {
-          "commits" = true;
-          "branches" = true;
-          "remotes" = true;
-          "stashes" = false;
-          "tags" = true;
-          "worktrees" = true;
-          "contributors" = true;
-          "repositories" = false;
-          "searchAndCompare" = false;
-          "launchpad" = false;
-        };
-
-        "rust-analyzer.lens.enable" = false;
-        "rust-analyzer.check.command" = "clippy";
       };
     };
   };
