@@ -1,11 +1,10 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   programs.vscode = {
     enable = true;
     profiles.default = {
       extensions = with pkgs.vscode-extensions; [
         jnoortheen.nix-ide
+        kamadorueda.alejandra
       ];
 
       userSettings = {
@@ -22,18 +21,6 @@
         "update.mode" = "none";
 
         "nix.enableLanguageServer" = true;
-        "nix.serverSettings" = {
-          "nil" = {
-            "formatting" = {
-              "command" = [
-                "nix"
-                "fmt"
-                "--"
-                "-"
-              ];
-            };
-          };
-        };
       };
     };
   };

@@ -4,12 +4,10 @@
   username,
   hostname,
   ...
-}:
-
-{
+}: {
   imports = [
     ./hardware-configuration.nix
-    (import ../../modules/system.nix { inherit pkgs username; })
+    (import ../../modules/system.nix {inherit pkgs username;})
     ../../modules/wm/kde.nix
   ];
 
@@ -26,7 +24,7 @@
         variant = "";
       };
       enable = true;
-      videoDrivers = [ "nvidia" ];
+      videoDrivers = ["nvidia"];
     };
   };
 

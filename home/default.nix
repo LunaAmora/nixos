@@ -1,6 +1,8 @@
-{ pkgs, username, ... }:
-
 {
+  pkgs,
+  username,
+  ...
+}: {
   imports = [
     ./vscode.nix
     ./git.nix

@@ -1,6 +1,8 @@
-{ pkgs, username, ... }:
-
 {
+  pkgs,
+  username,
+  ...
+}: {
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -81,7 +83,7 @@
         "flakes"
       ];
       # Add myself to the trusted users
-      trusted-users = [ username ];
+      trusted-users = [username];
     };
 
     # Garbage collection settings

@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-let
+{pkgs, ...}: let
   background-package = pkgs.stdenvNoCC.mkDerivation {
     name = "background-image";
     src = ./.;
@@ -9,8 +7,7 @@ let
       cp $src/wallpaper.png $out
     '';
   };
-in
-{
+in {
   services = {
     displayManager.sddm = {
       theme = "breeze";
