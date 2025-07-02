@@ -24,24 +24,29 @@
         variant = "";
       };
       enable = true;
-      videoDrivers = ["nvidia"];
+      videoDrivers = [
+        "modesetting"
+        "nvidia"
+      ];
     };
   };
 
   hardware = {
-    graphics.enable = true;
+    graphics = {
+      enable = true;
+      extraPackages = with pkgs; [intel-media-driver];
+    };
 
     nvidia = {
       nvidiaSettings = true;
       modesetting.enable = true;
-      powerManagement.enable = true;
+      powerManagement.enable = false;
       powerManagement.finegrained = false;
 
       # Open Source Kernel Modules
       open = true;
 
-      # Beta Drivers
-      package = config.boot.kernelPackages.nvidiaPackages.beta;
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
 
       prime = {
         offload = {
@@ -57,6 +62,8 @@
     bluetooth.enable = true; # enables support for Bluetooth
     bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
   };
+
+  environment.sessionVariables = {LIBVA_DRIVER_NAME = "iHD";};
 
   # ZRam
   zramSwap.enable = true;

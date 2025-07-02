@@ -29,6 +29,9 @@
           "searchAndCompare" = false;
           "launchpad" = false;
         };
+
+        "gitlens.plusFeatures.enabled" = false;
+        "gitlens.codeLens.enabled" = false;
       };
     };
   };

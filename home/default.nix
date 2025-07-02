@@ -6,7 +6,8 @@
   imports = [
     ./vscode.nix
     ./git.nix
-    # ./rust.nix
+    ./rust.nix
+    ./direnv.nix
   ];
 
   home = {

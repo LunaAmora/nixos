@@ -12,18 +12,19 @@ in {
     displayManager.sddm = {
       theme = "breeze";
       enable = true;
+      wayland.enable = true;
     };
     desktopManager.plasma6.enable = true;
   };
+
+  environment.plasma6.excludePackages = with pkgs.kdePackages; [
+    elisa
+  ];
 
   environment.systemPackages = [
     (pkgs.writeTextDir "share/sddm/themes/breeze/theme.conf.user" ''
       [General]
       background = ${background-package}
     '')
-  ];
-
-  environment.plasma6.excludePackages = with pkgs.kdePackages; [
-    elisa
   ];
 }
