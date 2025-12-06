@@ -21,10 +21,13 @@
       nil
       nh
       firefox
-      discord
+      vesktop
       vlc
       qbittorrent
       kdePackages.filelight
+      audacity
+      heroic
+      libreoffice
     ];
 
     sessionVariables.NH_FLAKE = "/etc/nixos";

@@ -32,6 +32,7 @@
 
         "gitlens.plusFeatures.enabled" = false;
         "gitlens.codeLens.enabled" = false;
+        "gitlens.launchpad.indicator.enabled" = false;
       };
     };
   };
