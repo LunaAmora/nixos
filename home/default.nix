@@ -8,6 +8,7 @@
     ./git.nix
     ./rust.nix
     ./direnv.nix
+    ./alice.nix
   ];
 
   home = {

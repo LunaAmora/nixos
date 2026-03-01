@@ -29,6 +29,8 @@
         "nvidia"
       ];
     };
+
+    tailscale.enable = true;
   };
 
   hardware = {
@@ -61,6 +63,8 @@
 
     bluetooth.enable = true; # enables support for Bluetooth
     bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+
+    opentabletdriver.enable = true; #OTD
   };
 
   environment.sessionVariables = {LIBVA_DRIVER_NAME = "iHD";};
