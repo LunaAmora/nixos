@@ -29,6 +29,7 @@
       audacity
       heroic
       libreoffice
+      gamescope
     ];
 
     sessionVariables.NH_FLAKE = "/etc/nixos";
