@@ -7,8 +7,8 @@
     ./vscode.nix
     ./git.nix
     ./rust.nix
-    ./direnv.nix
-    ./alice.nix
+    # ./direnv.nix
+    # ./alice.nix
   ];
 
   home = {
@@ -27,8 +27,8 @@
       qbittorrent
       kdePackages.filelight
       audacity
-      heroic
-      libreoffice
+      # libreoffice
+      bespokesynth
       gamescope
     ];
 
