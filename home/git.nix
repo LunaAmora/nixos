@@ -2,9 +2,11 @@
   programs = {
     git = {
       enable = true;
-      userName = "LunaAmora";
-      userEmail = "luna.mberry@gmail.com";
-      extraConfig.merge.conflictStyle = "diff3";
+      settings = {
+        user.name = "LunaAmora";
+        user.email = "luna.mberry@gmail.com";
+        merge.conflictStyle = "diff3";
+      };
     };
 
     vscode.profiles.default = {
